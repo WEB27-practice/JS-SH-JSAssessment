@@ -73,7 +73,7 @@ console.log(`The make is`, obj.Cars[1].Make);
 
 // how much do all the dream cars cost?
 
-const sum = array => {
+const sumCars = array => {
     const capture = array.reduce(function(total, current) {
         return total + current.cost;
     }, 0);
@@ -84,14 +84,20 @@ const sum = array => {
 // console.log(sum(obj.dreamCars));
 // console.log(sum(obj.Cars));
 
-const sumCars = (arr1, arr2) => {
-
+const sumCars2 = (arr1, arr2) => {
+    // Pseudo code notes
+    // 1. Get the total amount of Cars 
     const sumArr1 = arr1.reduce((total, current) => {
         return total + current.cost;
     }, 0)
-
+    
+    // 2. Get the total amount of dreamCars
     const sumArr2 = arr2.reduce((total, current) => {
         return total + current.cost;
     }, 0)
+    
+    // 3. Add Cars to dreamCars 
+    return sumArr1 + sumArr2;
 }
 
+console.log(sumCars2(obj.Cars, obj.dreamCars));
